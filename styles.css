@@ -1,0 +1,106 @@
+:root{
+    --base-color:#c6c1dd84;
+    --base-variant:#e8e9ed;
+    --text-color:#111eb5;
+    --secondary-text:#232738;
+    --primary-color:#3a435d;
+    --accent-color:#101425;
+}
+
+.darkmode{
+    --base-color:#070b1d;
+    --base-variant:#101425;
+    --text-color:aqua;
+    --secondary-text:#e2e9e9eb;
+    --primary-color:#3a435d;
+    --accent-color:#101425;
+}
+
+.main{
+    padding:50px;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+  /* min-height: 100vh; */
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
+h1{
+ font-weight: bolder;
+ text-align: center;
+ font-family: 'Lucida Sans',serif;
+}
+ 
+.container{
+  color: var(--secondary-text);
+}
+div > div > button{
+  border: none;
+  background-color: var(--accent-color);
+  color: white;
+  border-radius: 1000px;
+  cursor: pointer;
+  position: relative;
+  padding: 1em 0;
+  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+div > div > button::after{
+    content: " ";
+    position: absolute;
+    height: 107%;
+    width: 101%;
+    border-radius: 1000px;
+    background-image: linear-gradient(to bottom right,violet,blue,purple,orange);
+    z-index: -1;
+}
+div > div > button:hover{
+    z-index: 1;
+}
+p{
+    font-size: larger;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    color:var(--text-color)
+}
+#theme-switch{        /*dark and light mode button*/
+    height: 50px;
+    width: 50px;
+    padding:0;
+    border-radius:50%;
+    background-color: var(--base-variant);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position:fixed;
+    top:20px;
+    right:20px;
+    border: none;
+}
+
+#theme-switch svg{
+    fill:var(--primary-color)
+}
+
+#theme-switch svg:last-child{
+    display: none;
+}
+.darkmode #theme-switch svg:first-child{
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child{
+    display: block;
+}
+@media screen and (max-width:800px) {
+    .main{
+        width:70%;
+    }
+}
